@@ -1,0 +1,321 @@
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+body p {
+    color: #555;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    border-bottom: 1px solid lightgrey;
+}
+nav {
+    position: relative; /* Added to contain the absolute ul in mobile */
+}
+
+ul#nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    font-size: 18px;
+}
+
+ul#nav-links li a {
+    color: black;
+    text-decoration: none;
+}
+
+ul#nav-links li a:hover {
+    color: #555;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    ul#nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 100%;
+        left: 0;
+        padding: 1rem 0;
+        transition: transform 0.3s ease;
+        transform: translateY(-150%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    ul#nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    ul#nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+.heroSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 30px;
+    text-align: center;
+}
+
+.imageSection {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.imageSection img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.Section-text {
+    flex: 1 1 300px;
+}
+
+.heroSection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.heroSection .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    margin: 2rem 0;
+}
+
+.social-icon i {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: black;
+    transition: color 0.3s;
+}
+
+.social-icon i:hover {
+    color: #555;
+}
+
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    background: none;
+}
+
+.btn:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+    cursor: pointer;
+}
+
+.aboutSection, .projectSection, .skillSection, .contactSection {
+    text-align: center;
+    padding: 5rem 5%;
+}
+
+.value {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cleanCode, .creativeDesign, .fastPerform {
+    border: 1px solid lightgray;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    max-width: 300px;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to { transform: translate(0); }
+}
+
+.project-container {
+    border: 1px solid #555;
+    border-radius: 30px;
+    padding: 2rem;
+    background-color: rgba(211, 211, 211, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+#ProjectDiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.imageDiv img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.skills-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: purple;
+    color: white;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.contact-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.mail, .Telephone, .location {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    border-radius: 2rem;
+    max-width: 300px;
+    width: 100%;
+}
+
+.form {
+    background-color: #f4f4f4;
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+}
+
+.form button {
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    background: purple;
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    border-top: 1px solid lightgrey;
+    padding: 1rem 5%;
+    color: #555;
+}
+
+/* Responsive Media Queries */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .heroSection h1 {
+        font-size: 2rem;
+    }
+
+    .heroSection .title {
+        font-size: 1.2rem;
+    }
+
+    .skills-title {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form textarea {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+    }
+
+    .cleanCode, .creativeDesign, .fastPerform {
+        max-width: 100%;
+    }
+
+    .mail, .Telephone, .location {
+        max-width: 100%;
+    }
+}
+
+
